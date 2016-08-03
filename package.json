@@ -1,0 +1,44 @@
+{
+    "name": "casey-js",
+    "description": "A string utility module that handles all cases gracefully.",
+    "version": "1.0.0",
+    "main": "lib/index.js",
+    "author": "Jakub Barczyk",
+    "repository": "jakubbarczyk/casey-js",
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/jakubbarczyk/casey-js.git"
+    },
+    "bugs": {
+        "url": "https://github.com/jakubbarczyk/casey-js/issues"
+    },
+    "homepage": "https://github.com/jakubbarczyk/casey-js#readme",
+    "license": "MIT",
+    "scripts": {
+        "build": "babel src --out-dir lib",
+        "test": "mocha --compilers js:babel-register"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "babel-cli": "~6.11.4",
+        "babel-preset-es2015-node4": "~2.1.0",
+        "chai": "~3.5.0",
+        "mocha": "~3.0.0"
+    },
+    "keywords": [
+        "camel",
+        "case",
+        "kebab",
+        "library",
+        "lower",
+        "mock",
+        "pascal",
+        "snake",
+        "string",
+        "upper",
+        "utility"
+    ],
+    "engines": {
+        "node": ">= 4.4.x"
+    }
+}
