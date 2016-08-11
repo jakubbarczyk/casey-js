@@ -104,6 +104,20 @@ describe("CaseyJS", () => {
         });
     });
 
+    describe("isTrainCase", () => {
+        it("should return true when the argument is in train case", () => {
+            casey.isTrainCase("FOO-BAR-BAZ").should.be.true;
+        });
+
+        it("should return false when the argument is not in train case", () => {
+            casey.isTrainCase("foo_Bar-Baz").should.be.false;
+        });
+
+        it("should throw an error when the argument is not a string", () => {
+            (() => casey.isTrainCase(null)).should.throw(TypeError, "isTrainCase argument null is not a string");
+        });
+    });
+
     describe("caseOf", () => {
         it("should return LOWER_CASE when the argument is in lower case", () => {
             casey.caseOf("foo_bar-baz").should.equal("LOWER_CASE");
@@ -127,6 +141,10 @@ describe("CaseyJS", () => {
 
         it("should return SNAKE_CASE when the argument is in snake case", () => {
             casey.caseOf("foo_bar_baz").should.equal("SNAKE_CASE");
+        });
+
+        it("should return TRAIN_CASE when the argument is in train case", () => {
+            casey.caseOf("FOO-BAR-BAZ").should.equal("TRAIN_CASE");
         });
 
         it("should return UNDEFINED_CASE when the argument does not match any case", () => {
@@ -171,6 +189,12 @@ describe("CaseyJS", () => {
     describe("toSnakeCase", () => {
         it("should return snake-cased argument", () => {
             casey.toSnakeCase("foo_Bar-BAZ").should.equal("foo_bar_baz");
+        });
+    });
+
+    describe("toTrainCase", () => {
+        it("should return train-cased argument", () => {
+            casey.toTrainCase("foo_Bar-BAZ").should.equal("FOO-BAR-BAZ");
         });
     });
 });

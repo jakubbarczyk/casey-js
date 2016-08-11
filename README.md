@@ -46,6 +46,10 @@ Returns _true_ if the string is in kebab case. Otherwise, returns _false_.
 
 Returns _true_ if the string is in snake case. Otherwise, returns _false_.
 
+#### isTrainCase(string)
+
+Returns _true_ if the string is in train case. Otherwise, returns _false_.
+
 #### caseOf(string)
 
 Determines the case of the string and returns its name, e.g. _CAMEL_CASE_. If the string does not match any case, returns _UNDEFINED_CASE_.
@@ -73,6 +77,10 @@ Returns kebab-cased string.
 #### toSnakeCase(string)
 
 Returns snake-cased string.
+
+#### toTrainCase(string)
+
+Returns train-cased string.
 
 ## License
 

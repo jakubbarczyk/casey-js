@@ -37,6 +37,11 @@ export function isSnakeCase(str) {
     return _pattern.SNAKE_CASE.test(str);
 }
 
+export function isTrainCase(str) {
+    checkForTypeError("isTrainCase", str);
+    return _pattern.TRAIN_CASE.test(str);
+}
+
 export function caseOf(str) {
     checkForTypeError("caseOf", str);
 
@@ -44,6 +49,7 @@ export function caseOf(str) {
     else if (isPascalCase(str)) return _case.PASCAL_CASE;
     else if (isKebabCase(str)) return _case.KEBAB_CASE;
     else if (isSnakeCase(str)) return _case.SNAKE_CASE;
+    else if (isTrainCase(str)) return _case.TRAIN_CASE;
     else if (isLowerCase(str)) return _case.LOWER_CASE;
     else if (isUpperCase(str)) return _case.UPPER_CASE;
 
@@ -78,6 +84,11 @@ export function toKebabCase(str) {
 export function toSnakeCase(str) {
     if (isSnakeCase(str)) return str;
     return fragment(toLowerCase(str)).join("_");
+}
+
+export function toTrainCase(str) {
+    if (isTrainCase(str)) return str;
+    return fragment(toUpperCase(str)).join("-");
 }
 
 function tail(str) {
