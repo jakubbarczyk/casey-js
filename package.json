@@ -1,7 +1,7 @@
 {
     "name": "casey-js",
     "description": "A string utility module that handles all cases gracefully.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "lib/index.js",
     "author": "Jakub Barczyk",
     "repository": "jakubbarczyk/casey-js",
