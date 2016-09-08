@@ -13,12 +13,12 @@ npm install casey-js
 Include it in your project:
 
 ```javascript
-import casey from 'casey-js';
+import casey from "casey-js";
 ```
 
 ## Documentation
 
-#### isString(*)
+#### isString(argument)
 
 Returns _true_ if the argument passed is a string or string object. Otherwise, returns _false_.
 
@@ -84,4 +84,4 @@ Returns train-cased string.
 
 ## License
 
-MIT
+[MIT](http://ilee.mit-license.org)
