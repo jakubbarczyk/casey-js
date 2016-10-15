@@ -15,8 +15,28 @@ describe('CaseyJS', () => {
             casey.isString(new String('foobar')).should.be.true;
         });
 
-        it('should return false when the argument is not a string', () => {
+        it('should return false when the argument is an object', () => {
+            casey.isString({}).should.be.false;
+        });
+
+        it('should return false when the argument is an array', () => {
+            casey.isString([]).should.be.false;
+        });
+
+        it('should return false when the argument is a number', () => {
+            casey.isString(0.1).should.be.false;
+        });
+
+        it('should return false when the argument is NaN', () => {
+            casey.isString(NaN).should.be.false;
+        });
+
+        it('should return false when the argument is null', () => {
             casey.isString(null).should.be.false;
+        });
+
+        it('should return false when the argument is undefined', () => {
+            casey.isString().should.be.false;
         });
     });
 
