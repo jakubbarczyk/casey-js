@@ -56,31 +56,31 @@ Determines the case of the string and returns its name, e.g. _CAMEL_CASE_. If th
 
 #### toLowerCase(string)
 
-Returns lower-cased string.
+Returns lower-cased string, e.g. _foobar_.
 
 #### toUpperCase(string)
 
-Returns upper-cased string.
+Returns upper-cased string, e.g. _FOOBAR_.
 
 #### toCamelCase(string)
 
-Returns camel-cased string.
+Returns camel-cased string, e.g. _fooBar_.
 
 #### toPascalCase(string)
 
-Returns pascal-cased string.
+Returns pascal-cased string, e.g. _FooBar_.
 
 #### toKebabCase(string)
 
-Returns kebab-cased string.
+Returns kebab-cased string, e.g. _foo-bar_.
 
 #### toSnakeCase(string)
 
-Returns snake-cased string.
+Returns snake-cased string, e.g. _foo_bar_.
 
 #### toTrainCase(string)
 
-Returns train-cased string.
+Returns train-cased string, e.g. _Foo-Bar_.
 
 ## License
 
