@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 export const LOWER_CASE = /^[^A-Z]+$/;
 export const UPPER_CASE = /^[^a-z]+$/;
