@@ -92,7 +92,7 @@ function _toCamelCase(str) {
 
 function _toPascalCase(str) {
     if (isPascalCase(str)) return str;
-    return fragment(toLowerCase(str)).map((frag) => toUpperCase(frag[0]) + tail(frag)).join("");
+    return fragment(toLowerCase(str)).map(frag => toUpperCase(frag[0]) + tail(frag)).join("");
 }
 
 function _toKebabCase(str) {
@@ -107,7 +107,7 @@ function _toSnakeCase(str) {
 
 function _toTrainCase(str) {
     if (isTrainCase(str)) return str;
-    return fragment(toUpperCase(str)).join("-");
+    return fragment(toLowerCase(str)).map(frag => toUpperCase(frag[0]) + tail(frag)).join("-");
 }
 
 function tail(str) {
@@ -115,7 +115,7 @@ function tail(str) {
 }
 
 function fragment(str) {
-    return String.prototype.match.call(str, _pattern.FRAGMENT)
+    return String.prototype.match.call(str, _pattern.FRAGMENT);
 }
 
 function checkForTypeError(fnName, arg) {

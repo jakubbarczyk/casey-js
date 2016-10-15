@@ -106,7 +106,7 @@ describe("CaseyJS", () => {
 
     describe("isTrainCase", () => {
         it("should return true when the argument is in train case", () => {
-            casey.isTrainCase("FOO-BAR-BAZ").should.be.true;
+            casey.isTrainCase("Foo-Bar-Baz").should.be.true;
         });
 
         it("should return false when the argument is not in train case", () => {
@@ -144,7 +144,7 @@ describe("CaseyJS", () => {
         });
 
         it("should return TRAIN_CASE when the argument is in train case", () => {
-            casey.caseOf("FOO-BAR-BAZ").should.equal("TRAIN_CASE");
+            casey.caseOf("Foo-Bar-Baz").should.equal("TRAIN_CASE");
         });
 
         it("should return UNDEFINED_CASE when the argument does not match any case", () => {
@@ -194,7 +194,7 @@ describe("CaseyJS", () => {
 
     describe("toTrainCase", () => {
         it("should return train-cased argument", () => {
-            casey.toTrainCase("foo_Bar-BAZ").should.equal("FOO-BAR-BAZ");
+            casey.toTrainCase("foo_Bar-BAZ").should.equal("Foo-Bar-Baz");
         });
     });
 });
