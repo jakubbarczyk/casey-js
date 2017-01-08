@@ -23,8 +23,8 @@ export const toKebabCase = _toKebabCase;
 export const toSnakeCase = _toSnakeCase;
 export const toTrainCase = _toTrainCase;
 
-function _isString(arg) {
-    return typeof arg === 'string' || arg !== null && typeof arg === 'object' && arg.constructor === String;
+function _isString(any) {
+    return typeof any === 'string' || any !== null && typeof any === 'object' && any.constructor === String;
 }
 
 function _isLowerCase(str) {
@@ -119,6 +119,6 @@ function fragment(str) {
     return String.prototype.match.call(str, _pattern.FRAGMENT);
 }
 
-function checkForTypeError(fnName, arg) {
-    if (!isString(arg)) throw new TypeError(`${fnName} argument ${arg} is not a string`);
+function checkForTypeError(fnName, any) {
+    if (!isString(any)) throw new TypeError(`${fnName} argument ${any} is not a string`);
 }
