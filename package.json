@@ -1,7 +1,7 @@
 {
   "name": "casey-js",
   "description": "A string utility module that handles all cases gracefully.",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "main": "lib/index.js",
   "author": "Jakub Barczyk",
   "repository": {
@@ -14,7 +14,7 @@
   "homepage": "https://github.com/jakubbarczyk/casey-js#readme",
   "license": "MIT",
   "scripts": {
-    "build": "babel src --out-dir lib",
+    "build": "babel src --out-dir lib --minified",
     "test": "mocha --compilers js:babel-register"
   },
   "dependencies": {},
@@ -33,10 +33,11 @@
     "pascal",
     "snake",
     "string",
+    "train",
     "upper",
     "utility"
   ],
   "engines": {
-    "node": ">= 4.4"
+    "node": ">=4"
   }
 }
