@@ -5,13 +5,13 @@ import * as _pattern from './pattern';
 
 export const isString = _isString;
 
-export const isLowerCase = _isLowerCase;
-export const isUpperCase = _isUpperCase;
-export const isCamelCase = _isCamelCase;
-export const isPascalCase = _isPascalCase;
-export const isKebabCase = _isKebabCase;
-export const isSnakeCase = _isSnakeCase;
-export const isTrainCase = _isTrainCase;
+export const isLowerCase = _is(_pattern.LOWER_CASE);
+export const isUpperCase = _is(_pattern.UPPER_CASE);
+export const isCamelCase = _is(_pattern.CAMEL_CASE);
+export const isPascalCase = _is(_pattern.PASCAL_CASE);
+export const isKebabCase = _is(_pattern.KEBAB_CASE);
+export const isSnakeCase = _is(_pattern.SNAKE_CASE);
+export const isTrainCase = _is(_pattern.TRAIN_CASE);
 
 export const caseOf = _caseOf;
 
@@ -27,44 +27,13 @@ function _isString(any) {
     return typeof any === 'string' || any !== null && typeof any === 'object' && any.constructor === String;
 }
 
-function _isLowerCase(str) {
-    checkForTypeError('isLowerCase', str);
-    return _pattern.LOWER_CASE.test(str);
-}
-
-function _isUpperCase(str) {
-    checkForTypeError('isUpperCase', str);
-    return _pattern.UPPER_CASE.test(str);
-}
-
-function _isCamelCase(str) {
-    checkForTypeError('isCamelCase', str);
-    return _pattern.CAMEL_CASE.test(str);
-}
-
-function _isPascalCase(str) {
-    checkForTypeError('isPascalCase', str);
-    return _pattern.PASCAL_CASE.test(str);
-}
-
-function _isKebabCase(str) {
-    checkForTypeError('isKebabCase', str);
-    return _pattern.KEBAB_CASE.test(str);
-}
-
-function _isSnakeCase(str) {
-    checkForTypeError('isSnakeCase', str);
-    return _pattern.SNAKE_CASE.test(str);
-}
-
-function _isTrainCase(str) {
-    checkForTypeError('isTrainCase', str);
-    return _pattern.TRAIN_CASE.test(str);
+function _is(pattern) {
+    return function (str) {
+        return isString(str) ? pattern.test(str) : false;
+    };
 }
 
 function _caseOf(str) {
-    checkForTypeError('caseOf', str);
-
     if (isCamelCase(str)) return _case.CAMEL_CASE;
     else if (isPascalCase(str)) return _case.PASCAL_CASE;
     else if (isKebabCase(str)) return _case.KEBAB_CASE;
@@ -72,53 +41,41 @@ function _caseOf(str) {
     else if (isTrainCase(str)) return _case.TRAIN_CASE;
     else if (isLowerCase(str)) return _case.LOWER_CASE;
     else if (isUpperCase(str)) return _case.UPPER_CASE;
-
-    return _case.UNDEFINED_CASE;
+    else return null;
 }
 
 function _toLowerCase(str) {
-    if (isLowerCase(str)) return str;
-    return String.prototype.toLowerCase.call(str);
+    return String.prototype.toLowerCase.call(String(str));
 }
 
 function _toUpperCase(str) {
-    if (isUpperCase(str)) return str;
-    return String.prototype.toUpperCase.call(str);
+    return String.prototype.toUpperCase.call(String(str));
 }
 
 function _toCamelCase(str) {
-    if (isCamelCase(str)) return str;
-    return fragment(toLowerCase(str)).map((frag, idx) => idx === 0 ? frag : toUpperCase(frag[0]) + tail(frag)).join('');
+    return _fragment(_toLowerCase(String(str))).map((frag, idx) => idx === 0 ? frag : _toUpperCase(frag[0]) + _tail(frag)).join('');
 }
 
 function _toPascalCase(str) {
-    if (isPascalCase(str)) return str;
-    return fragment(toLowerCase(str)).map(frag => toUpperCase(frag[0]) + tail(frag)).join('');
+    return _fragment(_toLowerCase(String(str))).map(frag => _toUpperCase(frag[0]) + _tail(frag)).join('');
 }
 
 function _toKebabCase(str) {
-    if (isKebabCase(str)) return str;
-    return fragment(toLowerCase(str)).join('-');
+    return _fragment(_toLowerCase(String(str))).join('-');
 }
 
 function _toSnakeCase(str) {
-    if (isSnakeCase(str)) return str;
-    return fragment(toLowerCase(str)).join('_');
+    return _fragment(_toLowerCase(String(str))).join('_');
 }
 
 function _toTrainCase(str) {
-    if (isTrainCase(str)) return str;
-    return fragment(toLowerCase(str)).map(frag => toUpperCase(frag[0]) + tail(frag)).join('-');
+    return _fragment(toLowerCase(String(str))).map(frag => toUpperCase(frag[0]) + _tail(frag)).join('-');
 }
 
-function tail(str) {
+function _tail(str) {
     return String.prototype.slice.call(str, 1);
 }
 
-function fragment(str) {
+function _fragment(str) {
     return String.prototype.match.call(str, _pattern.FRAGMENT);
-}
-
-function checkForTypeError(fnName, any) {
-    if (!isString(any)) throw new TypeError(`${fnName} argument ${any} is not a string`);
 }

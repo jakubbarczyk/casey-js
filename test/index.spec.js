@@ -1,6 +1,6 @@
 'use strict';
 
-import {should} from 'chai';
+import {should, expect} from 'chai';
 import * as casey from '../src/casey';
 
 before(should);
@@ -49,8 +49,8 @@ describe('CaseyJS', () => {
             casey.isLowerCase('FOOBARBAZ').should.be.false;
         });
 
-        it('should throw an error when the argument is not a string', () => {
-            (() => casey.isLowerCase(null)).should.throw(TypeError, 'isLowerCase argument null is not a string');
+        it('should return false when the argument is not a string', () => {
+            casey.isLowerCase(null).should.be.false;
         });
     });
 
@@ -63,8 +63,8 @@ describe('CaseyJS', () => {
             casey.isUpperCase('foobarbaz').should.be.false;
         });
 
-        it('should throw an error when the argument is not a string', () => {
-            (() => casey.isUpperCase(null)).should.throw(TypeError, 'isUpperCase argument null is not a string');
+        it('should return false when the argument is not a string', () => {
+            casey.isUpperCase(null).should.be.false;
         });
     });
 
@@ -77,8 +77,8 @@ describe('CaseyJS', () => {
             casey.isCamelCase('FooBarBaz').should.be.false;
         });
 
-        it('should throw an error when the argument is not a string', () => {
-            (() => casey.isCamelCase(null)).should.throw(TypeError, 'isCamelCase argument null is not a string');
+        it('should return false when the argument is not a string', () => {
+            casey.isCamelCase(null).should.be.false;
         });
     });
 
@@ -91,8 +91,8 @@ describe('CaseyJS', () => {
             casey.isPascalCase('fooBarBaz').should.be.false;
         });
 
-        it('should throw an error when the argument is not a string', () => {
-            (() => casey.isPascalCase(null)).should.throw(TypeError, 'isPascalCase argument null is not a string');
+        it('should return false when the argument is not a string', () => {
+            casey.isPascalCase(null).should.be.false;
         });
     });
 
@@ -105,8 +105,8 @@ describe('CaseyJS', () => {
             casey.isKebabCase('foo_Bar-Baz').should.be.false;
         });
 
-        it('should throw an error when the argument is not a string', () => {
-            (() => casey.isKebabCase(null)).should.throw(TypeError, 'isKebabCase argument null is not a string');
+        it('should return false when the argument is not a string', () => {
+            casey.isKebabCase(null).should.be.false;
         });
     });
 
@@ -119,8 +119,8 @@ describe('CaseyJS', () => {
             casey.isSnakeCase('foo_Bar-Baz').should.be.false;
         });
 
-        it('should throw an error when the argument is not a string', () => {
-            (() => casey.isSnakeCase(null)).should.throw(TypeError, 'isSnakeCase argument null is not a string');
+        it('should return false when the argument is not a string', () => {
+            casey.isSnakeCase(null).should.be.false;
         });
     });
 
@@ -133,8 +133,8 @@ describe('CaseyJS', () => {
             casey.isTrainCase('foo_Bar-Baz').should.be.false;
         });
 
-        it('should throw an error when the argument is not a string', () => {
-            (() => casey.isTrainCase(null)).should.throw(TypeError, 'isTrainCase argument null is not a string');
+        it('should return false when the argument is not a string', () => {
+            casey.isTrainCase(null).should.be.false;
         });
     });
 
@@ -167,12 +167,12 @@ describe('CaseyJS', () => {
             casey.caseOf('Foo-Bar-Baz').should.equal('TRAIN_CASE');
         });
 
-        it('should return UNDEFINED_CASE when the argument does not match any case', () => {
-            casey.caseOf('foo_Bar-BAZ').should.equal('UNDEFINED_CASE');
+        it('should return null when the argument does not match any case', () => {
+            expect(casey.caseOf('foo_Bar-BAZ')).to.be.null;
         });
 
-        it('should throw an error when the argument is not a string', () => {
-            (() => casey.caseOf(null)).should.throw(TypeError, 'caseOf argument null is not a string');
+        it('should return null when the argument is not a string', () => {
+            expect(casey.caseOf(null)).to.be.null;
         });
     });
 

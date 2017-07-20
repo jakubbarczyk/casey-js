@@ -18,9 +18,9 @@ import casey from "casey-js";
 
 ## Documentation
 
-#### isString(argument)
+#### isString(any)
 
-Returns _true_ if the argument passed is a string or string object. Otherwise, returns _false_.
+Returns _true_ if the passed argument is a string or a string object. Otherwise, returns _false_.
 
 #### isLowerCase(string)
 
@@ -52,7 +52,7 @@ Returns _true_ if the string is in train case. Otherwise, returns _false_.
 
 #### caseOf(string)
 
-Determines the case of the string and returns its name, e.g. _CAMEL_CASE_. If the string does not match any case, returns _UNDEFINED_CASE_.
+Determines the case of the string and returns its name, e.g. _CAMEL_CASE_. If the string does not match any case, returns _null_.
 
 #### toLowerCase(string)
 
