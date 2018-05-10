@@ -1,3 +1,5 @@
-"use strict";
+'use strict';
 
-module.exports = require('./casey');
+import * as casey from './casey';
+
+export default casey;
