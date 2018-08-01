@@ -1,5 +1,8 @@
 # CaseyJS
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jakubbarczyk/casey-js.svg)](https://greenkeeper.io/)
+
+
 A string utility module that handles all cases gracefully.
 
 ## Installation
