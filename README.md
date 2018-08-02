@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jakubbarczyk/casey-js.svg?branch=master)](https://travis-ci.org/jakubbarczyk/casey-js)
+
 # CaseyJS
 
 A string utility module that handles all cases gracefully.
