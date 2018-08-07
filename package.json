@@ -23,7 +23,7 @@
         "babel-preset-env": "~1.7.0",
         "chai": "4.1.2",
         "mocha": "~5.2.0",
-        "rollup": "~0.64.0"
+        "rollup": "~0.64.1"
     },
     "keywords": [
         "camel",
