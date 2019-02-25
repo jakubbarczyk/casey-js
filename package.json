@@ -22,7 +22,7 @@
         "babel-core": "^6.26.3",
         "babel-preset-env": "^1.7.0",
         "chai": "^4.1.2",
-        "mocha": "^5.2.0",
+        "mocha": "^6.0.2",
         "rollup": "^1.0.0"
     },
     "keywords": [
