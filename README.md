@@ -1,6 +1,3 @@
-[![Build Status](https://travis-ci.org/jakubbarczyk/casey-js.svg?branch=master)](https://travis-ci.org/jakubbarczyk/casey-js)
-[![Greenkeeper badge](https://badges.greenkeeper.io/jakubbarczyk/casey-js.svg)](https://greenkeeper.io/)
-
 # CaseyJS
 
 A string utility module that handles all cases gracefully.
