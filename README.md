@@ -1,3 +1,8 @@
+[![build](https://travis-ci.org/jakubbarczyk/casey-js.svg?branch=master)](https://travis-ci.org/jakubbarczyk/casey-js)
+[![dependencies](https://david-dm.org/jakubbarczyk/casey-js.svg)](https://david-dm.org/jakubbarczyk/casey-js)
+[![npm package](https://badge.fury.io/js/casey-js.svg)](https://badge.fury.io/js/casey-js)
+[![vulnerabilities](https://snyk.io/test/github/jakubbarczyk/casey-js/badge.svg)](https://snyk.io/test/github/jakubbarczyk/casey-js)
+
 # CaseyJS
 
 A string utility module that handles all cases gracefully.
