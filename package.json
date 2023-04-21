@@ -14,16 +14,16 @@
     "homepage": "https://github.com/jakubbarczyk/casey-js#readme",
     "license": "MIT",
     "scripts": {
-        "build": "parcel build src/casey.js --global casey",
+        "build": "rollup -i src/casey.js -f umd -n casey -o dist/casey.js -m",
+        "prebuild": "npm test",
         "test": "mocha --require babel-core/register"
     },
-    "dependencies": {},
     "devDependencies": {
         "babel-core": "^6.26.3",
         "babel-preset-env": "^1.7.0",
-        "chai": "^4.2.0",
-        "mocha": "^8.0.1",
-        "parcel-bundler": "^1.12.4"
+        "chai": "^4.3.7",
+        "mocha": "^10.2.0",
+        "rollup": "^3.20.7"
     },
     "keywords": [
         "camel",
@@ -39,6 +39,6 @@
         "utility"
     ],
     "engines": {
-        "node": ">=8"
+        "node": ">=18"
     }
 }
